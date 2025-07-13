@@ -15,10 +15,10 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
-
-- task: AzureRmWebAppDeployment@5
+- task: AzureWebApp@1
   inputs:
-    ConnectionType: 'AzureRM'
+    azureSubscription: 'Tushar new subscription(12675718-0052-4934-9015-11b9d17dae50)'
     appType: 'webApp'
-    WebAppName: test
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    appName: 'test'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
