@@ -15,3 +15,11 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
+
+
+- task: DotNetCoreCLI@2
+  inputs:
+    azureSubscription: 'Azure subscription 1(6d308cf6-c494-45e0-9eba-89af42f3ed67)'
+    command: 'publish'
+    publishWebProjects: true
+    workingDirectory: 'app'
