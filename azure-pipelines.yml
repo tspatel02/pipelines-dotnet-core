@@ -17,8 +17,8 @@ steps:
   displayName: 'dotnet build $(buildConfiguration)'
 - task: AzureWebApp@1
   inputs:
-    azureSubscription: 'Tushar new subscription(12675718-0052-4934-9015-11b9d17dae50)'
+    azureSubscription: 'Azure subscription 1(6d308cf6-c494-45e0-9eba-89af42f3ed67)'
     appType: 'webApp'
-    appName: 'test'
+    appName: 'tushweb'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
     deploymentMethod: 'auto'
